@@ -1,0 +1,68 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Candice Casey",
+      "username": "Avis",
+      "password": "123",
+      "isBlocked": "flase",
+      "Rrole": "user"
+    },
+    {
+      "id": 1,
+      "name": "Ilia Mitvichin",
+      "username": "Mitchin",
+      "password": "123",
+      "isBlocked": "flase",
+      "role": "admin"
+    },
+    {
+      "id": 4,
+      "name": "Magdalena Townsend",
+      "username": "Gibson",
+      "password": "123",
+      "isBlocked": "flase",
+      "role": "user"
+    },
+    {
+      "id": 5,
+      "name": "Martha Moody",
+      "username": "Elizabeth",
+      "password": "123",
+      "isBlocked": "flase",
+      "role": "user"
+    },
+    {
+      "id": 6,
+      "name": "Spasko 2",
+      "sername": "SPas",
+      "password": "az",
+      "isBlocked": "flase",
+      "role": "user"
+    },
+    {
+      "id": 7,
+      "name": "gsdfgdsf",
+      "username": "gfdgsdf",
+      "password": "as",
+      "isBlocked": "flase",
+      "role": "user"
+    },
+    {
+      "id": 8,
+      "name": "Welch Cash",
+      "username": "Green",
+      "password": "123",
+      "isBlocked": "flase",
+      "role": "user"
+    },
+    {
+      "email": "y.mitvchina@gmail.com",
+      "id": 11,
+      "name": "Yoana Mitvichina",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user"
+    }
+  ]
+}

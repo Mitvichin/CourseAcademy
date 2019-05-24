@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Candice Casey",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "candice@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "Ilia Mitvichin",
+      "password": "123",
+      "isBlocked": false,
+      "role": "admin",
+      "email": "mitvichin@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Magdalena Townsend",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "magda@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Martha Moody",
+      "username": "Elizabeth",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "moodyBitch@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Jerome Olba",
+      "password": "az",
+      "isBlocked": false,
+      "role": "user",
+      "email": "motherfucker@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "Ivan Papazov",
+      "password": "as",
+      "isBlocked": false,
+      "role": "user",
+      "email": "papazov@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "Welch Cash",
+      "password": "123",
+      "isBlocked": true,
+      "role": "user",
+      "email": "welch@abv.bg"
+    },
+    {
+      "id": 11,
+      "email": "y.mitvchina@gmail.com",
+      "name": "Yoana Mitvichina",
+      "password": "123",
+      "isBlocked": true,
+      "role": "user"
+    }
+  ]
+}

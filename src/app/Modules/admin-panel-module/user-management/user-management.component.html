@@ -1,0 +1,19 @@
+<table class="userTable">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Role</th>
+    <th colspan="2">Status</th>
+  </tr>
+  <tr class="userColumn" *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.name}}</td>
+    <td>{{user.email}}</td> 
+    <td>{{user.role}} </td>
+    <td *ngIf="user.isBlocked">Blocked</td>
+    <td *ngIf="!user.isBlocked">Clear</td>
+    <td class="blockBtn" *ngIf="user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock</i></td>
+    <td class="blockBtn" *ngIf="!user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock_open</i></td>
+  </tr>
+</table>
