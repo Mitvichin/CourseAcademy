@@ -68,24 +68,10 @@
   ],
   "courses": [
     {
-      "id": 2,
-      "title": "Angular Course",
-      "description": "This is angular begginer's course",
-      "rating": 5,
-      "userIDs": []
-    },
-    {
-      "id": 3,
-      "title": "FireBase",
-      "description": "This is FireBase introduction course",
-      "rating": 5,
-      "userIDs": []
-    },
-    {
-      "id": 5,
+      "id": 0,
       "title": "FirstCourse",
+      "description": "This is the initial course",
       "rating": 5,
-      "description": "This is the initial course 22",
       "userIDs": []
     }
   ]

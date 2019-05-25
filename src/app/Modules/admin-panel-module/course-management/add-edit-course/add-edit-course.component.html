@@ -1,0 +1,17 @@
+<div class="fromContainer">
+<div class="formHeader">Course Form</div>
+  <form class="form" #courseForm="ngForm" (ngSubmit)="submitCourse(courseForm.form);">
+    <input type="text" hidden class="form-control" name="id" [(ngModel)]="course.id" #idField="ngModel">
+    <input  placeholder="Title" type="text" class="form-control userInputField" name="title" [(ngModel)]="course.title" #titleField="ngModel" autocomplete="off" required minlength="3">
+    <input  disabled placeholder="Rating"  type="text" class="form-control userInputField" name="rating" [(ngModel)]="course.rating" #ratingField="ngModel">
+    <textarea  placeholder="Description" cols="20" rows="4"  row="2" cols="10" type="text" class="form-control userInputField" name="description" [(ngModel)]="course.description" #descField="ngModel" required minlength="3">
+      </textarea>
+      <div class="error" *ngIf="titleField.touched && titleField.errors">
+        Name is required. Minimun length for the name is 3!
+      </div>
+      <div class="error" *ngIf="descField.touched && descField.errors">
+          Description is required. Minimun length for the description is 3!
+        </div>
+      <button type="submit" [disabled]="!courseForm.valid">Submit</button>
+    </form>
+  </div>

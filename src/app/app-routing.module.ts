@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 
-   {path:'users',loadChildren: './Modules/admin-panel-module/admin-panel.module#AdminPanelModule'}
+   {path:'admin-panel',loadChildren: './Modules/admin-panel-module/admin-panel.module#AdminPanelModule'}
 ];
 
 @NgModule({

@@ -34,3 +34,10 @@
     /* Support for IE. */
     font-feature-settings: 'liga';
   }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
