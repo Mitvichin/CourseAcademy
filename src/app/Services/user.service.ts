@@ -33,4 +33,14 @@ export class UserService extends BaseService{
   updateUser(user: User) : Promise<any>{
     return this.http.put(`${this.endpoint}/${user.id}`, user).toPromise();
   }
+
+  async getUserByEmail(email: string) : Promise<User>{
+    let users = await this.getAllUsers();
+    let user = users.find((x) => x.email === email);
+
+    if(user){
+      return user;
+    }
+    return null;
+  }
 }

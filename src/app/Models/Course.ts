@@ -3,5 +3,6 @@ export interface Course {
     title: string,
     description: string,
     rating:number,
-    userIDs: number[]
+    userIDs: number[],
+    ratings: number[]
 }

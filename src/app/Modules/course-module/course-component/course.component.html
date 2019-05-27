@@ -1,0 +1,50 @@
+<div class="coursesWrapper" #pageWrapper>
+  <div class="coursesContainer">
+    <div class="courseCard" *ngFor="let course of courses">
+      <span class="ratingDropdownContainer" #dropdown (mouseenter)="showDropdown(course.id)" (mouseleave)="hideDropdown()">
+      <div class="rateIcon">
+        <i class="material-icons">star</i>
+      </div>
+      <div class="ratingDropdown" id="{{dropdownIdPrefix}}{{course.id}}">
+        <ul #dropdownUl>
+          <li class="ratingChoice" (click)=rateCourse(1,course)>
+            <i class="material-icons">star</i>
+          </li>
+          <li class="ratingChoice" (click)=rateCourse(2,course)>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          </li>
+          <li class="ratingChoice" (click)=rateCourse(3,course)>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          </li>
+          <li class="ratingChoice" (click)=rateCourse(4,course)>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          </li>
+          <li class="ratingChoice" (click)=rateCourse(5,course)>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+            <i class="material-icons">star</i>
+          </li>
+        </ul>
+      </div>
+      </span>
+      <span class="joinIcon">
+          <i class="material-icons">person_add</i>
+        </span>
+      <div class="title">
+        <b>{{course.title}}</b> 
+      </div>
+      <div class="description">{{course.description}}</div>
+      <span class="rating"><b>Rating: {{course.rating}}/5</b></span>
+      
+    </div>
+  </div>
+
+</div>

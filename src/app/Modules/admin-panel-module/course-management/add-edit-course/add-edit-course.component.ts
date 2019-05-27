@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CourseService } from 'src/app/Services/course.service';
-import { Course } from 'src/app/Models/Course';
+import { CourseService } from '../../../../Services/course.service';
+import { Course } from '../../../../Models/Course';
 
 @Component({
   selector: 'app-add-edit-course',

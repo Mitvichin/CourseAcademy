@@ -1,0 +1,125 @@
+.coursesWrapper{
+    width: 100%;
+    height: 100%;
+
+    .coursesContainer{
+        width: 50%;
+        margin: 0 auto;
+
+        .courseCard{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 1px solid lightgrey;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px;
+            text-align: start;
+        }
+    }
+
+    .courseCard{
+        .title{
+            padding: 3px;
+            font-size: 24px;
+            margin:10px;
+            text-align: center;
+            position: relative;
+
+            
+        }
+
+        .title::after{
+            content: '';
+            width: 100%;
+            height: 1px;
+            position: absolute;
+            left: 0;
+            bottom:0;
+            background-color: lightgrey;
+        }
+
+        .rateIcon, .joinIcon{
+            position: absolute;
+            top: 5px;
+            color: #bfbfbf;
+        }
+
+        .rateIcon{
+            right: 5px;
+        }
+
+        .ratingDropdown.show{
+            display: inline;
+        }
+
+        .ratingDropdown{
+            position: absolute;
+            right:0;
+            transform: translate(40%);
+            top: 30px;
+            background: white;
+            border: 1px solid lightgrey;
+            border-radius: 10px;
+            z-index: 1;
+            display: none;
+
+            ul{
+                list-style: none;
+                padding:5px;
+                margin: 5px;
+            }
+
+            .ratingChoice{
+                color: #bfbfbf;
+                text-align: center;
+            }
+
+            .ratingChoice:hover{
+                cursor: pointer;
+                color: gold;
+                transform: scale(1.2);
+                transition: .4s;
+            }
+        }
+
+        .joinIcon{
+        right:35px;
+        }
+
+        .joinIcon:hover{
+            transform: scale(1.2);
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        .joinIcon:hover{
+            color:#009933;
+        }
+
+        .ratingDropdownContainer:hover{
+            .rateIcon{
+                color:gold;
+                transform: scale(1.2);
+                transition: .3s;
+                cursor: pointer;
+            }
+
+            .rateIcon:focus{
+                outline: none;
+            }
+        }
+
+        .description{
+            padding: 10px;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+
+        .rating{
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+    }
+}
