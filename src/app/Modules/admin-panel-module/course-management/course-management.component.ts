@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CourseService } from '../../../Services/course.service';
 import { Course } from '../../../Models/Course';
 import {
@@ -9,9 +9,6 @@ import {
   transition,
   query
 } from '@angular/animations';
-import { PARAMETERS } from '@angular/core/src/util/decorators';
-
-
 
 @Component({
   selector: 'app-course-management',
@@ -45,7 +42,7 @@ export class CourseManagementComponent implements OnInit {
   isOpen = true;
   currentID = "";
 
-  constructor(private courseService: CourseService, private renderer: Renderer2) { }
+  constructor(private courseService: CourseService) { }
 
   async ngOnInit() {
     await this.populateCourses(); 

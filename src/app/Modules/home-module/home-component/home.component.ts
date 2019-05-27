@@ -9,15 +9,16 @@ import { LogInDTO } from '../../../Models/DTOs/LogInDTO';
 })
 export class HomeComponent implements OnInit {
   logInDTO: LogInDTO = {} as LogInDTO;
+  isLogInSucc: boolean;
 
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-
   }
 
-  logIn(){
-    
+  async logIn() {
+    this.isLogInSucc = await this.authService.logIn(this.logInDTO);
+    console.log(this.isLogInSucc)
   }
 
 }

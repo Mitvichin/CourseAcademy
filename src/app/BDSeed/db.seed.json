@@ -246,9 +246,8 @@
       "id": 5,
       "title": "FirstCourse",
       "rating": 5,
-      "description": "This is the initial course 22",
-      "userIDs": [],
-      "ratings": []
+      "description": "This is the initial course 222",
+      "userIDs": []
     }
   ]
 }
