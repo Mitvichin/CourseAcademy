@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CourseService } from '../../../Services/course.service';
 import { Course } from '../../../Models/Course';
+import { AuthService } from '../../../Services/auth.service';
+import { Rating } from '../../../Models/Rating';
 
 @Component({
   selector: 'app-course',
@@ -15,7 +17,7 @@ export class CourseComponent implements OnInit {
   showDropdownCssClass = "show";
   courses: Course[] = [];
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService, private authService: AuthService) { }
 
   async ngOnInit() {
    this.courses = await this.courseService.getAllCourses();
@@ -37,10 +39,11 @@ export class CourseComponent implements OnInit {
     }
   }
 
-  async rateCourse(rate: number, course: Course){
-    console.log("mina");
-    course.ratings.push(rate);
+  async rateCourse(rateValue: number, course: Course){
+    let userID:number = this.authService.getUserID();
 
-    await this.courseService.rateCourse(course);
+    let rating: Rating = {userID: userID, rate:rateValue};
+
+    await this.courseService.rateCourse(course,rating);
   }
 }

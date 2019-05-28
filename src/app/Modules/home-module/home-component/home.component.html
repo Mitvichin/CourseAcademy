@@ -1,17 +1,21 @@
-<div class="fromContainer">
+<div class="homeContainer">
+  <div class="fromContainer">
     <div class="formHeader">Log In</div>
-      <form class="form" #logInForm="ngForm" (ngSubmit)="logIn(logInForm.form);">
-        <input  placeholder="Email" type="email" class="form-control userInputField" name="email" [(ngModel)]="logInDTO.email" #emailField="ngModel" autocomplete="off" required minlength="3">
-        <input  placeholder="Password"  type="password" class="form-control userInputField" name="password" [(ngModel)]="logInDTO.password" #passwordField="ngModel" required minlength="3">
-          <div class="error" *ngIf="emailField.touched && emailField.errors">
-            Email is required. Minimun length for the name is 3!
-          </div>
-          <div class="error" *ngIf="passwordField.touched && passwordField.errors">
-              Password is required. Minimun length for the name is 3!
-            </div>
-            <div class="error" *ngIf="isLogInSucc == false">
-                Unsuccessful log in! Wrong credentials!
-            </div>
-          <button type="submit" [disabled]="!logInForm.valid">Submit</button>
-        </form>
+    <form class="form" #logInForm="ngForm" (ngSubmit)="logIn(logInForm.form);">
+      <input placeholder="Email" type="email" class="form-control userInputField" name="email"
+        [(ngModel)]="logInDTO.email" #emailField="ngModel" autocomplete="off" required minlength="3">
+      <input placeholder="Password" type="password" class="form-control userInputField" name="password"
+        [(ngModel)]="logInDTO.password" #passwordField="ngModel" required minlength="3">
+      <div class="error" *ngIf="emailField.touched && emailField.errors">
+        Email is required. Minimun length for the name is 3!
       </div>
+      <div class="error" *ngIf="passwordField.touched && passwordField.errors">
+        Password is required. Minimun length for the name is 3!
+      </div>
+      <div class="error" *ngIf="isLogInSucc == false">
+        Unsuccessful log in! Wrong credentials!
+      </div>
+      <button type="submit" [disabled]="!logInForm.valid" [ngClass]="logInForm.valid ? 'logInBtnEnableHover' :'' " class="logInBtn"><b>GO</b></button>
+    </form>
+  </div>
+</div>

@@ -11,6 +11,7 @@ export class AuthService extends BaseService {
   authCookieName = 'isAuthenticated';
   emailCookieName = 'emai';
   roleCookieName = 'role';
+  userIDCookieName = 'userID';
 
   constructor(private userService: UserService, private cookieService: CookieService) { 
     super();
@@ -22,6 +23,8 @@ export class AuthService extends BaseService {
       this.cookieService.set(this.authCookieName,'true');
       this.cookieService.set(this.emailCookieName,user.email);
       this.cookieService.set(this.roleCookieName,user.role);
+      this.cookieService.set(this.userIDCookieName,user.id.toString());
+
       return true;
     }
 
@@ -35,7 +38,6 @@ export class AuthService extends BaseService {
     } catch (error) {
       return false;
     }
-
   }
 
   isAuthenticated() : boolean{
@@ -54,7 +56,11 @@ export class AuthService extends BaseService {
     if(role === 'admin'){
       return true;
     }
-    return false;
 
+    return false;
+  }
+
+  getUserID() : number {
+    return Number(this.cookieService.get(this.userIDCookieName));
   }
 }
