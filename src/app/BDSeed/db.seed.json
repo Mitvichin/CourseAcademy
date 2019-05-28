@@ -71,9 +71,30 @@
       "id": 2,
       "title": "Angular Course",
       "description": "This is angular begginer's course",
-      "rating": 2,
+      "rating": 3.6,
       "userIDs": [],
-      "ratings": [{"userID": 0 , "rate": 1}]
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 3
+        },
+        {
+          "userID": 1,
+          "rate": 5
+        },
+        {
+          "userID": 1,
+          "rate": 3
+        },
+        {
+          "userID": 1,
+          "rate": 2
+        },
+        {
+          "userID": 1,
+          "rate": 5
+        }
+      ]
     },
     {
       "id": 3,
@@ -81,16 +102,33 @@
       "description": "This is FireBase introduction course",
       "rating": 3.5,
       "userIDs": [],
-      "ratings": [{"userID": 0 , "rate": 1}]
-      
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 3
+        }
+      ]
     },
     {
       "id": 5,
       "title": "FirstCourse",
-      "rating": 5,
+      "rating": 3,
       "description": "This is the initial course 222",
       "userIDs": [],
-      "ratings": [{"userID": 0 , "rate": 1}]
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 3
+        },
+        {
+          "userID": 1,
+          "rate": 4
+        },
+        {
+          "userID": 1,
+          "rate": 2
+        }
+      ]
     }
   ]
 }

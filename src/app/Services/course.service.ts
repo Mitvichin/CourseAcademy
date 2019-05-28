@@ -50,7 +50,7 @@ export class CourseService extends BaseService {
   private calculateRating(ratings: Rating[], newRate: Rating) : number{
     ratings.push(newRate);
     let ratingSum = 0;
-
+    console.log(ratings);
     ratings.forEach(rating => {
       ratingSum += rating.rate;
     });
