@@ -1,5 +1,5 @@
 <table class="userTable">
-  <tr>
+  <tr class="userColumn tableHeaders">
     <th>ID</th>
     <th>Name</th>
     <th>Email</th>
@@ -10,7 +10,7 @@
     <td>{{user.id}}</td>
     <td>{{user.name}}</td>
     <td>{{user.email}}</td> 
-    <td>{{user.role}} </td>
+    <td class="userTd" (click)="changeRole(user)">{{user.role}} </td>
     <td *ngIf="user.isBlocked">Blocked</td>
     <td *ngIf="!user.isBlocked">Clear</td>
     <td class="blockBtn" *ngIf="user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock</i></td>

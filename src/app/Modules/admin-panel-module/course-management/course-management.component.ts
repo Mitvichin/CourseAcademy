@@ -41,6 +41,9 @@ export class CourseManagementComponent implements OnInit {
   shouldFade = true;
   isOpen = true;
   currentID = "";
+  shoudShow = false;
+  showHideFormText="Add";
+  refreshTable = false;
 
   constructor(private courseService: CourseService) { }
 
@@ -50,6 +53,7 @@ export class CourseManagementComponent implements OnInit {
 
   async populateCourses(){
     this.courses = await this.courseService.getAllCourses();
+    console.log(this.courses);
   }
 
   async deleteCourse(e: MouseEvent,id: number){
@@ -63,10 +67,28 @@ export class CourseManagementComponent implements OnInit {
       this.courses.splice(itemIndex, 1);
     }
   }
+
   selectCourse(course: Course){
-  this.selectedCourse = course; 
-  }
-  editCourse(course: Course){
   
+  }
+
+  editCourse(course: Course){
+    this.selectedCourse = course;
+    if(this.showHideFormText == "Add"){
+      this.showHideFormText = "Hide";
+      this.shoudShow = true;
+    }
+  }
+
+  showHideForm(course: Course){
+    this.shoudShow = !this.shoudShow;
+    if(this.showHideFormText == "Add"){
+      this.showHideFormText = "Hide";
+    }
+    else{
+      this.showHideFormText = "Add"
+      this.selectedCourse = course;
+    }
+    
   }
 }

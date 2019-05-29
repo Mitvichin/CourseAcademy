@@ -12,7 +12,7 @@ import { Rating } from '../../../Models/Rating';
 export class CourseComponent implements OnInit {
   @ViewChild('pageWrapper') pageWrapper : ElementRef
   curentDropdown: HTMLElement;
-  shouldShowCurrDropdown = false;
+  userID:number;
   dropdownIdPrefix = "dropdown";
   showDropdownCssClass = "show";
   courses: Course[] = [];
@@ -20,30 +20,48 @@ export class CourseComponent implements OnInit {
   constructor(private courseService: CourseService, private authService: AuthService) { }
 
   async ngOnInit() {
+   this.userID = this.authService.getUserID();
    this.courses = await this.courseService.getAllCourses();
   }
 
-  showDropdown(id:number){
-    this.curentDropdown = this.pageWrapper.nativeElement.querySelector(`#${this.dropdownIdPrefix}${id}`);
-    
-    if(this.curentDropdown.classList.contains(this.showDropdownCssClass) == false){
-      this.curentDropdown.className += ` ${this.showDropdownCssClass}`;
-    }
-  }
-
-  hideDropdown(){
-    let dropdownClassList=this.curentDropdown.classList;
-
-    if(dropdownClassList.contains(this.showDropdownCssClass)){
-      dropdownClassList.remove(this.showDropdownCssClass);
-    }
-  }
-
   async rateCourse(rateValue: number, course: Course){
-    let userID:number = this.authService.getUserID();
+    let tempCourse = course.ratings.find((x) => x.userID == this.userID)
 
-    let rating: Rating = {userID: userID, rate:rateValue};
+    if(tempCourse){
+      alert('You have already voted!');
+      return;
+    }
+
+    let rating: Rating = {userID: this.userID, rate:rateValue};
 
     await this.courseService.rateCourse(course,rating);
+  }
+
+  async joinCourse(course: Course){
+    if(course.userIDs.includes(this.userID)){
+      alert('You have already joined!');
+      return;
+    }
+
+    await this.courseService.joinCourse(course, this.userID);
+  }
+
+  isJoined(course: Course): string{
+
+    if(course.userIDs.includes(this.userID)){
+      return 'joinedCourse'
+    }
+
+    return '';
+  }
+
+  isRated(course:Course): string{
+    let tempCourse = course.ratings.find((x) => x.userID == this.userID)
+
+    if(tempCourse){
+      return 'ratedCourse';
+    }
+
+    return '';
   }
 }

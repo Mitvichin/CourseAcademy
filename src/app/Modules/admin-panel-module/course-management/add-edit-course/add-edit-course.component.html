@@ -1,5 +1,4 @@
 <div class="fromContainer">
-<div class="formHeader">Course Form</div>
   <form class="form" #courseForm="ngForm" (ngSubmit)="submitCourse(courseForm.form);">
     <input type="text" hidden class="form-control" name="id" [(ngModel)]="course.id" #idField="ngModel">
     <input  placeholder="Title" type="text" class="form-control userInputField" name="title" [(ngModel)]="course.title" #titleField="ngModel" autocomplete="off" required minlength="3">
@@ -12,6 +11,6 @@
       <div class="error" *ngIf="descField.touched && descField.errors">
           Description is required. Minimun length for the description is 3!
         </div>
-      <button type="submit" [disabled]="!courseForm.valid">Submit</button>
+      <button type="submit" [disabled]="!courseForm.valid" [ngClass]="courseForm.valid ? 'courseSubmitEnableHover' :'' " class="courseSubmit">Submit</button>
     </form>
   </div>

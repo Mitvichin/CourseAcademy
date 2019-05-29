@@ -21,6 +21,15 @@ export class UserManagementComponent implements OnInit {
     this.users = await this.userService.getAllUsers();
   }
 
+  changeRole(user: User){
+    if(user.role == "admin"){
+      user.role ="user";
+    }
+    else{
+      user.role = "admin"
+    }
+  }
+
   async blockUser(user: User){
     user.isBlocked = !user.isBlocked;
     await this.userService.updateUser(user);

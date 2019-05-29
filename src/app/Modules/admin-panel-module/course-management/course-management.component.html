@@ -1,25 +1,29 @@
-<table class="userTable" [@fadeInOut]>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Rating</th>
-      <th></th> 
-      <th></th>
-    </tr>
-  </thead>
-  <tbody #tbody>
-    <tr class="courseColumn" *ngFor="let course of courses" (click)=selectCourse(course) [@slideUpTbRow]>
-      <td>{{course.id}}</td>
-      <td>{{course.title}}</td>
-      <td>{{course.description}}</td> 
-      <td>{{course.rating}} </td>
-      <td class="btn deleteBtn" (click)="deleteCourse($event, course.id)"><div class="iconContainer" id="iconCont{{course.id}}"><i class="material-icons">delete_forever</i></div></td>
-      <td class="btn editBtn" (click)="editCourse(course)"><div class="iconContainer"><i class="material-icons">edit</i></div></td>
-    </tr>
-  </tbody>
+<div class="courseManagementWrapper">
+  <table class="courseTable"  [@fadeInOut]>
+    <thead>
+      <tr class="courseColumn tableHeaders">
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th></th> 
+        <th></th>
+      </tr>
+    </thead>
+    <tbody #tbody>
+      <tr class="courseColumn" *ngFor="let course of courses">
+        <td>{{course.id}}</td>
+        <td>{{course.title}}</td>
+        <td>{{course.description}}</td> 
+        <td>{{course.rating}} </td>
+        <td class="btn deleteBtn" (click)="deleteCourse($event, course.id)"><div class="iconContainer" id="iconCont{{course.id}}"><i class="material-icons">delete_forever</i></div></td>
+        <td class="btn editBtn" (click)="editCourse(course)"><div class="iconContainer"><i class="material-icons">edit</i></div></td>
+      </tr>
+    </tbody>
   </table>
 
-
-  <app-add-edit-course [course]="selectedCourse"></app-add-edit-course>
+  <div class="formSection">
+    <div class="showHideForm" (click)="showHideForm()">{{showHideFormText}}</div>
+    <app-add-edit-course (onSubmited)="populateCourses();" class="formComponent" [course]="selectedCourse" *ngIf="shoudShow"></app-add-edit-course>
+  </div>
+</div>

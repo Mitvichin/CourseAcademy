@@ -13,7 +13,7 @@
       "name": "Ilia Mitvichin",
       "password": "123",
       "isBlocked": false,
-      "role": "admin",
+      "role": "mAdmin",
       "email": "mitvichin@gmail.com"
     },
     {
@@ -71,28 +71,14 @@
       "id": 2,
       "title": "Angular Course",
       "description": "This is angular begginer's course",
-      "rating": 3.6,
-      "userIDs": [],
+      "rating": 3,
+      "userIDs": [
+        1
+      ],
       "ratings": [
         {
           "userID": 1,
           "rate": 3
-        },
-        {
-          "userID": 1,
-          "rate": 5
-        },
-        {
-          "userID": 1,
-          "rate": 3
-        },
-        {
-          "userID": 1,
-          "rate": 2
-        },
-        {
-          "userID": 1,
-          "rate": 5
         }
       ]
     },
@@ -100,33 +86,25 @@
       "id": 3,
       "title": "FireBase",
       "description": "This is FireBase introduction course",
-      "rating": 3.5,
+      "rating": 5,
       "userIDs": [],
       "ratings": [
         {
           "userID": 1,
-          "rate": 3
+          "rate": 5
         }
       ]
     },
     {
       "id": 5,
       "title": "FirstCourse",
-      "rating": 3,
+      "rating": 5,
       "description": "This is the initial course 222",
       "userIDs": [],
       "ratings": [
         {
           "userID": 1,
-          "rate": 3
-        },
-        {
-          "userID": 1,
-          "rate": 4
-        },
-        {
-          "userID": 1,
-          "rate": 2
+          "rate": 5
         }
       ]
     }

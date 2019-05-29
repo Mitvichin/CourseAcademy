@@ -9,7 +9,7 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class AuthService extends BaseService {
   authCookieName = 'isAuthenticated';
-  emailCookieName = 'emai';
+  emailCookieName = 'email';
   roleCookieName = 'role';
   userIDCookieName = 'userID';
 
@@ -19,7 +19,7 @@ export class AuthService extends BaseService {
 
   async logIn(logInDTO: LogInDTO): Promise<boolean>{
     let user = await this.userService.getUserByEmail(logInDTO.email);
-    if(user && user.password === logInDTO.password){
+    if(user && user.password === logInDTO.password && user.isBlocked === true){
       this.cookieService.set(this.authCookieName,'true');
       this.cookieService.set(this.emailCookieName,user.email);
       this.cookieService.set(this.roleCookieName,user.role);
@@ -52,8 +52,9 @@ export class AuthService extends BaseService {
 
   isAdmin() : boolean{
     let role = this.cookieService.get(this.roleCookieName);
+    console.log(role);
 
-    if(role === 'admin'){
+    if(role === 'admin' || role ==="mAdmin"){
       return true;
     }
 
