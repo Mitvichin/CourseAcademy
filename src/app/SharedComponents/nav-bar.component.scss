@@ -1,0 +1,35 @@
+.navBarContainer{
+    width:100%;
+
+    .navRoutes{
+        display: inline-block;
+        width:70px;
+        height: 70px;
+        border-radius: 70px;
+        margin:2%;
+        margin-top:1%;
+        margin-bottom: 5%;
+        font-size:11px;
+        color:#fff;
+        text-align: center;
+        line-height: 70px;
+        background-color: rgba(255, 255, 255, .5);
+        transition: .3s;
+        user-select: none;
+
+        
+    }
+    .navRoutes:last-child{
+        float:right;
+    }
+
+    .navRoutes:hover{
+        transform: scale(1.2);
+        background-color: rgba(255, 255, 255, .7);
+        cursor: pointer;
+    }
+
+    .navRoutes:focus{
+        outline: none;
+    }
+}
