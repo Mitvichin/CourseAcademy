@@ -1,0 +1,144 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "name": "Candice Casey",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "candice@gmail.com"
+    },
+    {
+      "id": 1,
+      "name": "Ilia Mitvichin",
+      "password": "123",
+      "isBlocked": false,
+      "role": "mAdmin",
+      "email": "mitvichin@gmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Magdalena Townsend",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "magda@gmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Martha Moody",
+      "username": "Elizabeth",
+      "password": "123",
+      "isBlocked": false,
+      "role": "user",
+      "email": "moodyBitch@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Jerome Olba",
+      "password": "az",
+      "isBlocked": false,
+      "role": "user",
+      "email": "motherfucker@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "Ivan Papazov",
+      "password": "as",
+      "isBlocked": false,
+      "role": "user",
+      "email": "papazov@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "Welch Cash",
+      "password": "123",
+      "isBlocked": true,
+      "role": "user",
+      "email": "welch@abv.bg"
+    },
+    {
+      "id": 11,
+      "email": "y.mitvchina@gmail.com",
+      "name": "Yoana Mitvichina",
+      "password": "123",
+      "isBlocked": true,
+      "role": "user"
+    },
+    {
+      "isBlocked": false,
+      "id": 12,
+      "role": "user",
+      "name": "momi-kun",
+      "email": "codorex@abv.bg",
+      "password": "123"
+    },
+    {
+      "id": 13,
+      "isBlocked": false,
+      "role": "user",
+      "name": "test",
+      "email": "mitvichin@asda.com",
+      "password": "123"
+    },
+    {
+      "id": 14,
+      "isBlocked": false,
+      "role": "user",
+      "name": "test2",
+      "email": "test@abv.bg",
+      "password": "123"
+    },
+    {
+      "id": 15,
+      "isBlocked": false,
+      "role": "user",
+      "name": "Mitvci",
+      "email": "ahakla@jklaal.com",
+      "password": "123"
+    }
+  ],
+  "courses": [
+    {
+      "id": 2,
+      "title": "Angular Course",
+      "description": "This is angular begginer's course",
+      "rating": 3,
+      "userIDs": [
+        1
+      ],
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "FireBase",
+      "description": "This is FireBase introduction course",
+      "rating": 5,
+      "userIDs": [],
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 5
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "FirstCourse",
+      "rating": 5,
+      "description": "This is the initial course 222",
+      "userIDs": [],
+      "ratings": [
+        {
+          "userID": 1,
+          "rate": 5
+        }
+      ]
+    }
+  ]
+}

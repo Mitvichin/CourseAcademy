@@ -1,0 +1,17 @@
+<div class="navBarContainer" [@fadeInOut]>
+  <div [routerLink]="['/courses']" class="navRoute">
+    <i class="material-icons">chrome_reader_mode</i>
+  </div>
+  <div [routerLink]="['/admin-panel/course-management']" *ngIf="isAdmin" [@fadeInOut] class="navRoute">
+    <i class="material-icons">add_box</i>
+    </div>
+  <div [routerLink]="['/admin-panel/user-management']" *ngIf="isAdmin" [@fadeInOut] class="navRoute">
+    <i class="material-icons">supervisor_account</i>
+  </div>
+  <div [routerLink]="['']" (click)="logOut()" *ngIf="shouldShowLogOut" [@fadeInOut] class="navRoute floatRight">
+    <i class="material-icons"> exit_to_app</i>
+  </div>
+  <div [routerLink]="['']" (click)="showHideRegForm()" *ngIf="!shouldShowLogOut" class="navRoute floatRight">
+    <i class="material-icons"> account_box</i>
+  </div>
+</div>

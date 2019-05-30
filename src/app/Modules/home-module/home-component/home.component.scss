@@ -1,0 +1,85 @@
+.homeContainer{
+    position: relative;
+    width: 100%;
+
+    .logInFormContainer,.RegFormContainer{
+        width: 30%;
+        margin: 0 auto;
+        background:rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        padding:5px;
+        
+        .formHeader{
+            text-align: center;
+            font-size: 24px;
+            padding: 10px;
+            margin-top:25px;
+        }
+        
+        .formHeader, .error{
+            color: #fff;
+        }
+        
+        .form{
+            width: 100%;
+            height: 100%;
+            padding:1%;
+            text-align: center;
+
+            .userInputField:nth-child(2){
+                margin-top:50px;
+            }
+
+            .userInputField{
+                display: block;
+                margin: 2% auto;
+                margin-top: 25px;
+                font-size: 18px;
+                padding:3%;
+                width: 75%;
+                border: 2px solid rgba(255, 255, 255, 1);
+                border-radius: 10px;
+                text-align: center;
+            }
+            
+            .error{
+                font-size: 18px;
+                padding:2px;
+                font-style: bold;
+            }
+            
+            .submitBtn{
+                margin: 20px auto;
+                background-color: transparent;
+                margin-top: 25px;
+                width: 20%;
+                padding: 8px;
+                color: rgba(255, 255, 255, 0.5);
+                border: 2px solid rgba(255, 255, 255, 0.5);
+                border-radius: 10px;
+                font-size: 20px;
+                transition: .4s;
+            }
+            
+            .submitBtnEnableHover:hover{
+                color: rgba(255, 255, 255, 1);
+                border-color: rgba(255, 255, 255, 1);
+                transform: scale(1.2);
+                cursor: pointer;
+            }
+        }
+    }
+
+    .RegFormContainer{
+        position: absolute;
+        top:0;
+        left:50%;
+        transform: translate(-50%);
+
+        .form{
+            .userInputField:nth-child(2){
+                margin-top:25px;
+            }
+        }
+    }
+}

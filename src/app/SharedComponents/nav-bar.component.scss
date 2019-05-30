@@ -1,0 +1,40 @@
+.navBarContainer{
+    width:100%;
+
+    .navRoute{
+        position: relative;
+        display: inline-block;
+        width:70px;
+        height: 70px;
+        border-radius: 70px;
+        margin:2%;
+        margin-top:1%;
+        margin-bottom: 5%;
+        font-size:11px;
+        color:#fff;
+        border: 1px solid transparent;
+        text-align: center;
+        background-color: rgba(255, 255, 255, .5);
+        transition: .3s;
+        outline: 0;
+
+        .material-icons{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            user-select: none;
+        }
+        
+    }
+    .floatRight{
+        float:right;
+       
+    }
+
+    .navRoute:hover{
+        transform: scale(1.2);
+        background-color: rgba(255, 255, 255, .7);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,20 @@
+<div class="coursesWrapper" #pageWrapper [@fadeInOut]>
+  <div class="coursesContainer">
+    <div class="CardWrapper" *ngFor="let course of courses">
+      <div class="courseCard">
+        <div class="actions" *ngIf="shouldShowActions">
+          <span class="joinIcon" [ngClass]='isJoined(course)' (click)="joinCourse(course)">
+            <i class="material-icons">person_add</i>
+          </span>
+          <course-rate (voted)="rateCourse($event,course)" [ngClass]='isRated(course)'></course-rate>
+        </div>
+        <div class="content">
+          <div class="title"><b>{{course.title}}</b></div>
+          <div class="description">{{course.description}}</div>
+          <div class="rating">{{course.rating}}/5</div>
+        </div>
+    </div>
+  </div>
+</div>
+
+

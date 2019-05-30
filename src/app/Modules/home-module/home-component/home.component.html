@@ -1,0 +1,46 @@
+<div class="homeContainer" [@fadeInOut] >
+  <div class="logInFormContainer" [@fadeInOut] *ngIf="!shouldDisplayRegForm">
+    <div class="formHeader">Log In</div>
+    <form class="form" #logInForm="ngForm" (ngSubmit)="logIn(logInForm.form);">
+      <input placeholder="Email" type="email" class="form-control userInputField" name="email"
+        [(ngModel)]="logInDTO.email" #emailField="ngModel" autocomplete="off" required minlength="3">
+      <input placeholder="Password" type="password" class="form-control userInputField" name="password"
+        [(ngModel)]="logInDTO.password" #passwordField="ngModel" required minlength="3">
+      <div class="error" *ngIf="emailField.touched && emailField.errors">
+        Email is required. Minimun length for the name is 3!
+      </div>
+      <div class="error" *ngIf="passwordField.touched && passwordField.errors">
+        Password is required. Minimun length for the name is 3!
+      </div>
+      <div class="error" *ngIf="isLogInSucc == false">
+        Unsuccessful log in! Wrong credentials!
+      </div>
+      <button type="submit" [disabled]="!logInForm.valid" [ngClass]="logInForm.valid ? 'submitBtnEnableHover' :'' " class="submitBtn"><b>GO</b></button>
+    </form>
+  </div>
+
+  <div class="RegFormContainer" [@fadeInOut] *ngIf="shouldDisplayRegForm">
+      <div class="formHeader">Register</div>
+      <form class="form" #regForm="ngForm" (ngSubmit)="register(regForm.form);">
+        <input placeholder="Name" type="text" class="form-control userInputField" name="name"
+        [(ngModel)]="registerDTO.name" #nameField="ngModel" autocomplete="off" required minlength="1">
+        <input placeholder="Email" type="email" class="form-control userInputField" name="email"
+          [(ngModel)]="registerDTO.email" #emailField="ngModel" autocomplete="off" required minlength="3">
+        <input placeholder="Password" type="password" class="form-control userInputField" name="password"
+          [(ngModel)]="registerDTO.password" #passwordField="ngModel" required minlength="3">
+        <div class="error" *ngIf="emailField.touched && emailField.errors">
+          Email is required. Minimun length for the name is 1!
+        </div>
+        <div class="error" *ngIf="nameField.touched && nameField.errors">
+          Name is required. Minimun length for the name is 3!
+        </div>
+        <div class="error" *ngIf="passwordField.touched && passwordField.errors">
+            Password is required. Minimun length for the name is 3!
+          </div>
+        <div class="error" *ngIf="isLogInSucc == false">
+          Unsuccessful registration! Please try again!
+        </div>
+        <button type="submit" [disabled]="!regForm.valid" [ngClass]="regForm.valid ? 'submitBtnEnableHover' :'' " class="submitBtn"><b>GO</b></button>
+      </form>
+    </div>
+</div>

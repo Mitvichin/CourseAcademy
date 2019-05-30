@@ -1,1 +1,100 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+         local('MaterialIcons-Regular'),
+         url(iconfont/MaterialIcons-Regular.woff2) format('woff2'),
+         url(iconfont/MaterialIcons-Regular.woff) format('woff'),
+         url(iconfont/MaterialIcons-Regular.ttf) format('truetype');
+ }
+
+ .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+html,body{
+  margin:0;
+  height: 100vh;
+}
+
+app-root{
+  position: absolute;
+  top:0;
+  left:0;
+  min-width: 100%;
+  min-height: 100%;
+  background: linear-gradient(90deg, #3f51b5,#00bcd4);
+  animation: backgroundGradiend 25s linear infinite;
+  background-size: cover;
+  z-index: 0;
+}
+
+@keyframes backgroundGradiend{
+  0%{
+    filter: hue-rotate(0deg)
+  }
+  50%{
+    filter: hue-rotate(360deg)
+  }
+  100%{
+    filter: hue-rotate(0deg)
+  }
+}
+
+// app-root::before{
+//   content: '';
+//   position: absolute;
+//   top:0;
+//   left:0;
+//   border-top:100vh solid transparent;
+//   border-left:100vh solid #fff;
+//   opacity: 0.2;
+//   z-index: -100;
+// }
+
+// app-root::after{
+//   content: '';
+//   position: absolute;
+//   bottom:0;
+//   right:0;
+//   border-top:100vh solid transparent;
+//   border-right:100vh solid #fff;
+//   opacity: 0.2;
+//   z-index: -100;
+// }
+
+
+
+* {
+  font-family:sans-serif
+}
