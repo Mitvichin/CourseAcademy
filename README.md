@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
 
-## Instructions to start the project
+# Instructions to start the project
 
 Before running ng serve, you must run json-server {path to json db fail} // the default is in app/DBSeed
 
