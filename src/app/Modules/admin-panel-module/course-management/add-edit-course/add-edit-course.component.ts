@@ -1,11 +1,15 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CourseService } from '../../../../Services/course.service';
 import { Course } from '../../../../Models/Course';
-
+import { fadeInOutAnimation } from '../../../../Animations/fadeInOut';
 @Component({
   selector: 'app-add-edit-course',
   templateUrl: './add-edit-course.component.html',
-  styleUrls: ['./add-edit-course.component.scss']
+  styleUrls: ['./add-edit-course.component.scss'],
+  animations: [
+    fadeInOutAnimation
+  ]
+  
 })
 export class AddEditCourseComponent implements OnInit {
   @Input('course') course: Course = {} as Course;

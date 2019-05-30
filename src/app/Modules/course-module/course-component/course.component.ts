@@ -1,27 +1,38 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { CourseService } from '../../../Services/course.service';
 import { Course } from '../../../Models/Course';
 import { AuthService } from '../../../Services/auth.service';
 import { Rating } from '../../../Models/Rating';
+import { fadeInOutAnimation } from '../../../Animations/fadeInOut';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-course',
   templateUrl: './course.component.html',
-  styleUrls: ['./course.component.scss']
+  styleUrls: ['./course.component.scss'],
+  animations: [
+    fadeInOutAnimation
+  ]
 })
-export class CourseComponent implements OnInit {
-  @ViewChild('pageWrapper') pageWrapper : ElementRef
-  curentDropdown: HTMLElement;
+export class CourseComponent implements OnInit, OnDestroy {
+ 
   userID:number;
   dropdownIdPrefix = "dropdown";
   showDropdownCssClass = "show";
   courses: Course[] = [];
+  shouldShowActions = false;
+  isLogedSubscription: Subscription;
+
 
   constructor(private courseService: CourseService, private authService: AuthService) { }
 
   async ngOnInit() {
    this.userID = this.authService.getUserID();
    this.courses = await this.courseService.getAllCourses();
+   this.shouldShowActions = this.authService.isAuthenticated();
+   this.isLogedSubscription = this.authService.logedObservable.subscribe(data =>{
+     this.shouldShowActions = data;
+   });
   }
 
   async rateCourse(rateValue: number, course: Course){
@@ -63,5 +74,9 @@ export class CourseComponent implements OnInit {
     }
 
     return '';
+  }
+
+  ngOnDestroy(): void {
+    this.isLogedSubscription.unsubscribe();
   }
 }

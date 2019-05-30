@@ -23,6 +23,7 @@ export class UserService extends BaseService{
   }
 
   createUser(user: User) : Promise<any>{
+    console.log(user);
     return this.http.post(this.endpoint, user).toPromise();
   }
 

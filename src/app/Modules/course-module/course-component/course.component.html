@@ -1,8 +1,8 @@
-<div class="coursesWrapper" #pageWrapper>
+<div class="coursesWrapper" #pageWrapper [@fadeInOut]>
   <div class="coursesContainer">
     <div class="CardWrapper" *ngFor="let course of courses">
       <div class="courseCard">
-        <div class="actions">
+        <div class="actions" *ngIf="shouldShowActions">
           <span class="joinIcon" [ngClass]='isJoined(course)' (click)="joinCourse(course)">
             <i class="material-icons">person_add</i>
           </span>

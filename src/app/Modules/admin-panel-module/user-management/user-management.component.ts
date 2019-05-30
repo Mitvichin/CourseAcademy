@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../../Services/user.service'
 import { User } from '../../../Models/User';
+import { fadeInOutAnimation } from '../../../Animations/fadeInOut';
 
 @Component({
   selector: 'user-management',
   templateUrl: './user-management.component.html',
-  styleUrls: ['./user-management.component.scss']
+  styleUrls: ['./user-management.component.scss'],
+  animations: [
+    fadeInOutAnimation
+  ]
 })
 export class UserManagementComponent implements OnInit {
   users: User[];

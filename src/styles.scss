@@ -47,16 +47,28 @@ html,body{
   height: 100vh;
 }
 
-body{
+app-root{
   position: absolute;
   top:0;
   left:0;
   min-width: 100%;
   min-height: 100%;
   background: linear-gradient(90deg, #3f51b5,#00bcd4);
-  animation: backgroundGradiend 20s linear infinite;
+  animation: backgroundGradiend 25s linear infinite;
   background-size: cover;
   z-index: 0;
+}
+
+@keyframes backgroundGradiend{
+  0%{
+    filter: hue-rotate(0deg)
+  }
+  50%{
+    filter: hue-rotate(360deg)
+  }
+  100%{
+    filter: hue-rotate(0deg)
+  }
 }
 
 // app-root::before{
@@ -81,17 +93,7 @@ body{
 //   z-index: -100;
 // }
 
-@keyframes backgroundGradiend{
-  0%{
-    filter: hue-rotate(0deg)
-  }
-  50%{
-    filter: hue-rotate(360deg)
-  }
-  100%{
-    filter: hue-rotate(0deg)
-  }
-}
+
 
 * {
   font-family:sans-serif

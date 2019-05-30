@@ -1,19 +1,22 @@
-<table class="userTable">
-  <tr class="userColumn tableHeaders">
-    <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Role</th>
-    <th colspan="2">Status</th>
-  </tr>
-  <tr class="userColumn" *ngFor="let user of users">
-    <td>{{user.id}}</td>
-    <td>{{user.name}}</td>
-    <td>{{user.email}}</td> 
-    <td class="userTd" (click)="changeRole(user)">{{user.role}} </td>
-    <td *ngIf="user.isBlocked">Blocked</td>
-    <td *ngIf="!user.isBlocked">Clear</td>
-    <td class="blockBtn" *ngIf="user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock</i></td>
-    <td class="blockBtn" *ngIf="!user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock_open</i></td>
-  </tr>
-</table>
+<div class="userManagementContainer" [@fadeInOut]>
+
+  <table class="userTable">
+    <tr class="userColumn tableHeaders">
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th colspan="2">Status</th>
+    </tr>
+    <tr class="userColumn" *ngFor="let user of users">
+      <td>{{user.id}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td> 
+      <td class="userTd" (click)="changeRole(user)">{{user.role}} </td>
+      <td *ngIf="user.isBlocked">Blocked</td>
+      <td *ngIf="!user.isBlocked">Clear</td>
+      <td class="blockBtn" *ngIf="user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock</i></td>
+      <td class="blockBtn" *ngIf="!user.isBlocked" (click)="blockUser(user)"><i class="material-icons">lock_open</i></td>
+    </tr>
+  </table>
+</div>

@@ -1,4 +1,4 @@
-<div class="fromContainer">
+<div class="fromContainer" [@fadeInOut]>
   <form class="form" #courseForm="ngForm" (ngSubmit)="submitCourse(courseForm.form);">
     <input type="text" hidden class="form-control" name="id" [(ngModel)]="course.id" #idField="ngModel">
     <input  placeholder="Title" type="text" class="form-control userInputField" name="title" [(ngModel)]="course.title" #titleField="ngModel" autocomplete="off" required minlength="3">

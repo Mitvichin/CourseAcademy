@@ -64,6 +64,38 @@
       "password": "123",
       "isBlocked": true,
       "role": "user"
+    },
+    {
+      "isBlocked": false,
+      "id": 12,
+      "role": "user",
+      "name": "momi-kun",
+      "email": "codorex@abv.bg",
+      "password": "123"
+    },
+    {
+      "id": 13,
+      "isBlocked": false,
+      "role": "user",
+      "name": "test",
+      "email": "mitvichin@asda.com",
+      "password": "123"
+    },
+    {
+      "id": 14,
+      "isBlocked": false,
+      "role": "user",
+      "name": "test2",
+      "email": "test@abv.bg",
+      "password": "123"
+    },
+    {
+      "id": 15,
+      "isBlocked": false,
+      "role": "user",
+      "name": "Mitvci",
+      "email": "ahakla@jklaal.com",
+      "password": "123"
     }
   ],
   "courses": [
