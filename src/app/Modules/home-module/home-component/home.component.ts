@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   async logIn(form) {
-    console.log(form)
     this.isLogInSucc = await this.authService.logIn(this.logInDTO);
 
     if (this.isLogInSucc) {

@@ -24,6 +24,7 @@ export class AddEditCourseComponent implements OnInit {
     let course = form.getRawValue() as Course;
     course.userIDs = [];
     course.rating = 0;
+    course.ratings = []
 
     if(course.id){
       await this.courseService.updateCourse(course);
@@ -32,5 +33,7 @@ export class AddEditCourseComponent implements OnInit {
       await this.courseService.createCourse(course);
       this.onSubmited.emit();
     }
+
+    form.reset();
   }
 }

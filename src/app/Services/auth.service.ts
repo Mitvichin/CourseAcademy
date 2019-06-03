@@ -65,7 +65,6 @@ export class AuthService extends BaseService {
 
   isAdmin() : boolean{
     let role = this.cookieService.get(this.roleCookieName);
-    console.log(role);
 
     if(role === 'admin' || role ==="mAdmin"){
       return true;
