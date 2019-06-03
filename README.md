@@ -1,6 +1,6 @@
 # Instructions to start the project
 
-Before running ng serve, you must run json-server {path to json db fail} // the default is in app/DBSeed
+Before running ng serve, you must run json-server {path to json db file} // the default is in app/DBSeed
 
 
 ## CourseAcademy
